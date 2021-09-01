@@ -1,0 +1,67 @@
+<head>
+    <link rel="stylesheet" href="/css/login-design.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+</head>
+<div class="main">
+    <div class="container">
+        <div class="img-container">
+            <a href="/">
+                <img src="/img/inv.png" alt="Inventory Logo" />
+            </a>
+            <div class="img">
+                <img src="/img/login.svg" />
+
+            </div>
+        </div>
+
+
+        <div class="content-container">
+            <h3>Password Reset</h3>
+            <!--Body-->
+            <h5 style="font-family: serif;">Please, Enter the email you sign up with</h5>
+            {{>messages}}
+            <form action="reset" method="POST" onsubmit=" return validateReq(this);">
+                <div class="form-group custom">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" name="email" class="form-control mine" id="exampleInputEmail1"
+                        aria-describedby="emailHelp" placeholder="Enter Your E-mail Address" />
+                    <p id="check" style="color: red;"></p>
+                </div>
+
+                <div class="submit-button">
+                    <input type="submit" value="Send Request!" class="btn btn-primary" />
+                    {{!-- <a class="btn btn-primary" href="../Authentication/new-pass">Send Request</a> --}}
+
+
+                </div>
+                <div style="text-align: left;">
+                    <p><a href="/Authentication/login" class="blue-text">Login</a> Instead!</p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+<script>
+    //validating email input field
+    function validateReq(form) {
+        var display = document.getElementById('check');
+        var message = '';
+        if (emptyField(form.email)) message += 'Please enter your registered email address.';
+        if (message == '') return true;
+        else {
+            display.innerHTML = message;
+            return false;
+        }
+    }
+    //Watching for empty field
+    function emptyField(f) {
+        var status = true;
+        for (i = 0; i < f.value.length; i++) {
+            if (f.value.charAt(i) != '')
+                status = false;
+            break;
+        }
+        return status;
+    }
+</script>

@@ -1,0 +1,258 @@
+{{!-- REGISTRATION MESSAGES --}}
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+
+{{!-- duplicate error message --}}
+
+{{#if mailError}}
+<p class="alert alert-danger alert-dismissible">
+    {{ mailError }}
+    <button type="button" onclick="this.parentElement.style.display='none';" class="close" data-dismiss="alert">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</p>
+{{/if}}
+
+{{!-- duplicate code --}}
+{{#if codeError}}
+<p class="alert alert-danger alert-dismissible">
+    {{codeError}}
+    <button type="button" onclick="this.parentElement.style.display='none';" class="close" data-dismiss="alert">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</p>
+{{/if}}
+
+{{!-- failed to register user --}}
+{{#if userFail}}
+<p class="alert alert-danger alert-dismissible">
+    {{ userFail }}
+    <button type="button" onclick="this.parentElement.style.display='none';" class="close" data-dismiss="alert">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</p>
+{{/if}}
+
+{{!-- user registered successfully --}}
+{{#if regSuccess}}
+<p class="alert alert-success alert-dismissible">
+    {{ regSuccess }}
+    <button type="button" onclick="this.parentElement.style.display='none';" class="close" data-dismiss="alert">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</p>
+{{/if}}
+
+
+{{#if MailSend}}
+<p class="alert alert-success alert-dismissible">
+    {{ MailSend }}
+    <button type="button" onclick="this.parentElement.style.display='none';" class="close" data-dismiss="alert">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</p>
+{{/if}}
+
+{{#if mailFailed}}
+<p class="alert alert-danger alert-dismissible">
+    {{ mailFailed }}
+    <button type="button" onclick="this.parentElement.style.display='none';" class="close" data-dismiss="alert">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</p>
+{{/if}}
+
+{{!-- for login messages --}}
+{{#if mailNotFound}}
+<p class="alert alert-danger alert-dismissible">
+    {{ mailNotFound }}
+    <button type="button" onclick="this.parentElement.style.display='none';" class="close" data-dismiss="alert">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</p>
+{{/if}}
+{{!-- verifications --}}
+{{#if notVerified}}
+<p class="alert alert-warning alert-dismissible">
+    {{ notVerified }}
+    <button type="button" onclick="this.parentElement.style.display='none';" class="close" data-dismiss="alert">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</p>
+{{/if}}
+{{!-- wrong password message --}}
+{{#if wrongPassword}}
+<p class="alert alert-danger alert-dismissible">
+    {{ wrongPassword }}
+    <button type="button" onclick="this.parentElement.style.display='none';" class="close" data-dismiss="alert">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</p>
+{{/if}}
+
+{{#if loginSuccess}}
+<p class="alert alert-success alert-dismissible">
+    {{ resetSuccess }}
+    <button type="button" onclick="this.parentElement.style.display='none';" class="close" data-dismiss="alert">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</p>
+{{/if}}
+
+{{!-- for reset form messages --}}
+{{#if resetFailure}}
+<p class="alert alert-danger alert-dismissible">
+    {{ resetFailure }}
+    <button type="button" onclick="this.parentElement.style.display='none';" class="close" data-dismiss="alert">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</p>
+{{/if}}
+{{#if resetSuccess}}
+<p class="alert alert-success alert-dismissible">
+    {{ resetSuccess }}
+    <button type="button" onclick="this.parentElement.style.display='none';" class="close" data-dismiss="alert">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</p>
+{{/if}}
+
+{{!-- display if a user tries to access resources without logging in first --}}
+{{#if loginFirst}}
+<p class="alert alert-warning alert-dismissible">
+    {{ loginFirst }}
+    <button type="button" onclick="this.parentElement.style.display='none';" class="close" data-dismiss="alert">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</p>
+{{/if}}
+
+{{!-- no user found for token --}}
+
+{{!-- verification error --}}
+{{#if verifyError}}
+<p class="alert alert-warning alert-dismissible">
+    {{ verifyError }}
+    <button type="button" onclick="this.parentElement.style.display='none';" class="close" data-dismiss="alert">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</p>
+{{/if}}
+
+{{#if userVerifyNotFound}}
+<p class="alert alert-warning alert-dismissible">
+    {{ userVerifyNotFound }}
+    <button type="button" onclick="this.parentElement.style.display='none';" class="close" data-dismiss="alert">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</p>
+{{/if}}
+
+{{!-- for a user already verified --}}
+{{#if userIsVerified}}
+<p class="alert alert-success alert-dismissible">
+    {{ userIsVerified }}
+    <button type="button" onclick="this.parentElement.style.display='none';" class="close" data-dismiss="alert">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</p>
+{{/if}}
+{{!-- verification successful --}}
+{{#if verifySuccess}}
+<p class="alert alert-success alert-dismissible">
+    {{ verifySuccess }}
+    <button type="button" onclick="this.parentElement.style.display='none';" class="close" data-dismiss="alert">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</p>
+{{/if}}
+
+{{!-- reset function message --}}
+{{#if resetMessage}}
+<p class="alert alert-danger alert-dismissible">
+    <b style="font-size: large;"><i class="fa fa-window-close"></i>{{ resetMessage }}</b>
+    <button type="button" onclick="this.parentElement.style.display='none';" class="close" data-dismiss="alert">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</p>
+{{/if}}
+
+{{!-- for wrong uid passcode message --}}
+{{#if wrongUidCode }}
+<!-- Modal -->
+<p class="alert alert-danger alert-dismissible">
+    <b>Wrong passcode! </b>{{ wrongUidCode }}
+    <button type="button" onclick="this.parentElement.style.display='none';" class="close" data-dismiss="alert">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</p>
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+        <style>
+            .modal-content {
+                width: 84%;
+                justify-content: center;
+                margin: 4rem;
+            }
+
+            .header {
+                background-color: darksalmon;
+                justify-content: center;
+            }
+
+            .modal-title b {
+                margin-left: 0.5rem;
+                color: rgb(114, 60, 60);
+            }
+
+            .msg {
+                padding: 2rem;
+                font-size: 16px;
+                text-transform: capitalize;
+
+                text-align: center;
+                text-shadow: 0.5px 1px 0.1px black, 0 0 35px blue, 0 0 5px darkblue;
+            }
+
+            @media screen and (max-width: 760px) {
+                .modal {
+                    width: 100%;
+                    margin-right: 12rem;
+                }
+            }
+        </style>
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">
+                    <i class="fa fa-exclamation-triangle"></i>
+                    <b>ACCESS DENIED!</b>
+                </h4>
+            </div>
+            <div class="modal-body">
+                <p class="alert-danger msg"><b>Wrong passcode! </b> {{ wrongUidCode }}</p>
+                <p>If you see this popup & you don't have this <b>Pass Code</b>, if you are supposed to use this
+                    platform,
+                    please
+                    contact the Admin
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script>
+
+    $(window).load(function () {
+        $('#myModal').modal('show');
+    });
+</script>
+{{/if}}
+
+
+{{!-- <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+<strong>Danger!</strong> --}}

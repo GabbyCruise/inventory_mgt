@@ -1,0 +1,312 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cobuildit Inventory System</title>
+    <link rel="stylesheet" href="/css/dashboard_style.css">
+    <link rel="stylesheet" href="/css/list.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+</head>
+
+<body>
+    <input type="checkbox" id="check">
+    <!--header area start-->
+    <div class="top">...</div>
+    <header>
+        <label for="check">
+            <i class="fas fa-bars" id="sidebar_btn"></i>
+        </label>
+
+        <div class="right_area">
+            <a href="/notification" class="logout_btn"><i class="far fa-bell color"></i></a>
+            <a href="#" class="logout_btn">
+                <i class="far fa-comment-dots color"></i>
+            </a>
+        </div>
+    </header>
+    <!--header area end-->
+    <!--mobile navigation bar start-->
+    <div class="mobile_nav">
+        <div class="nav_bar">
+            <img src="/img/download.png" class="mobile_profile_image" alt="">
+            <i class="fa fa-bars nav_btn"></i>
+        </div>
+
+        <div class="mobile_nav_items">
+            <div class="items">
+                <span class="project_dropdown">
+                    <i class="fas fa-city"></i>
+                    <a href="/welcome">Dashboard</a>
+                </span>
+            </div>
+
+            <div class="items">
+                <span class="project_dropdown">
+                    <i class="fas fa-city"></i>
+                    Essentia &#8594
+                    {{!-- <b class="caret" id="caret"></b> --}}
+                </span>
+                <li>
+                    <ul class="project_actions">
+                        <p><a href="#">Create new report</a></p>
+                        <p><a href="/projects/essentia/list">View all reports</a></p>
+                    </ul>
+                </li>
+            </div>
+
+            <div class="items">
+                <span class="project_dropdown">
+                    <i class="fas fa-warehouse"></i>
+                    Regency &#8594
+                    {{!-- <b class="caret" id="caret"></b> --}}
+                </span>
+                <li>
+                    <ul class="project_actions">
+                        <p><a href="#">Create new report</a></p>
+                        <p><a href="#">View all reports</a></p>
+                    </ul>
+                </li>
+            </div>
+
+            <div class="items">
+                <span class="project_dropdown">
+                    <i class="fas fa-hospital"></i>
+                    Zephyr &#8594
+                    {{!-- <b class="caret" id="caret"></b> --}}
+                </span>
+                <li>
+                    <ul class="project_actions">
+                        <p><a href="#">Create new report</a></p>
+                        <p><a href="#">View all reports</a></p>
+                    </ul>
+                </li>
+            </div>
+
+            <div class="items">
+                <span class="project_dropdown">
+                    <i class="fas fa-hotel"></i>
+                    Lifestyle &#8594
+                    {{!-- <b class="caret" id="caret"></b> --}}
+                </span>
+                <li>
+                    <ul class="project_actions">
+                        <p><a href="#">Create new report</a></p>
+                        <p><a href="#">View all reports</a></p>
+                    </ul>
+                </li>
+            </div>
+
+            {{!-- Logout --}}
+            <div class="items">
+                <span class="project_dropdown">
+                    <i class="fas fa-hospital"></i>
+                    <a href="/logout">Logout</a>
+                </span>
+            </div>
+        </div>
+    </div>
+    <!--mobile navigation bar end-->
+    <!--sidebar start-->
+    <div class="sidebar">
+        <div class="logo">
+            <img src="/img/inv-white.png" />
+        </div>
+        <div class="profile_info">
+            <img src="/img/download.png" class="profile_image" alt="">
+            <h4>{{ username }}</h4>{{!-- name should be updated from the db here--}}
+        </div>
+
+        <div class="sidebar-items">
+            <div class="items">
+                <span class="project_dropdown">
+                    <i class="fas fa-desktop"></i>
+                    <a href="#">Dashboard</a>
+                </span>
+            </div>
+
+            {{!-- PROJECTS LISTING --}}
+            {{!-- Essentia Project --}}
+            <div class="items">
+                <span class="project_dropdown">
+                    <i class="fas fa-city"></i>
+                    Essentia &#8594
+                    {{!-- <b class="caret" id="caret"></b> --}}
+                </span>
+                <li>
+                    <ul class="project_actions">
+                        <p>
+                            <a href="/projects/essentia/essentia-forms">Create new report</a>
+                        </p>
+                        <p><a href="/projects/essentia/list">View all reports</a></p>
+                    </ul>
+                </li>
+            </div>
+
+            {{!-- Regency Project --}}
+            <div class="items">
+                <span class="project_dropdown">
+                    <i class="fas fa-warehouse"></i>
+                    Regency &#8594
+                </span>
+                <li>
+                    <ul class="project_actions">
+                        <p><a href="#">Create new report</a></p>
+                        <p><a href="#">View all reports</a></p>
+                    </ul>
+                </li>
+            </div>
+
+            {{!-- LifeStyle --}}
+            <div class="items">
+                <span class="project_dropdown">
+                    <i class="fas fa-hotel"></i>
+                    Lifestyle &#8594
+                </span>
+                <li>
+                    <ul class="project_actions">
+                        <p><a href="#">Create new report</a></p>
+                        <p><a href="#">View all reports</a></p>
+                    </ul>
+                </li>
+            </div>
+
+            {{!-- Zephyr Project --}}
+            <div class="items">
+                <span class="project_dropdown">
+                    <i class="fas fa-hospital"></i>
+                    Zephyr &#8594
+                </span>
+                <li>
+                    <ul class="project_actions">
+                        <p><a href="#">Create new report</a></p>
+                        <p><a href="#">View all reports</a></p>
+                    </ul>
+                </li>
+            </div>
+
+            {{!-- Logout --}}
+            <div class="items">
+                <span class="project_dropdown">
+                    <i class="fa fa-sign-out-alt"></i>
+                    <a href="/logout">Logout</a>
+                </span>
+            </div>
+
+        </div>
+    </div>
+    <!--sidebar end-->
+
+    {{!-- content display container start --}}
+    <div class="content" id="content">
+        <div class="content-holder">
+
+        </div>
+
+        {{!-- form fields --}}
+        <div class="main-container">
+            <div class="first-layer">
+                <h2><b>Essentia all report item view</b></h2>
+                <hr>
+                {{!-- breadcrumbs --}}
+                <ol class="breadcrumb mb-4">
+                    <li class="breadcrumb-item">
+                        <a href="/welcome">Dashboard</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="/projects/essentia/essentia-forms">Essentia</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="/projects/essentia/list">All reports</a>
+                    </li>
+                    <li class="breadcrumb-item active">Report view</li>
+                </ol>
+            </div>
+        </div>
+        {{!-- material display per item --}}
+        <div class="material-full-page">
+            {{!-- {{materialItem}} --}}
+            <p>This feature is coming up shortly</p>
+
+        </div>
+
+
+    </div>
+</body>
+
+
+{{!-- for inner project item display --}}
+<script>
+    $(function () {
+
+        $('.project_dropdown').on('click', function () {
+            var slide_el = $(this).next().find('.project_actions');
+
+            // don't slide up if clicking on the already visible element
+            if (!slide_el.is(':visible')) {
+                $('.project_actions').slideUp();
+            }
+            slide_el.slideToggle(); // only slide clicked element
+        });
+
+    });
+</script>
+
+{{!-- dropdowns for project action lists --}}
+<script>
+    $(function () {
+
+        $('.dropdown').on('click', function () {
+            var slide_el = $(this).next().find('.project_actions');
+
+            // don't slide up if clicking on the already visible element
+            if (!slide_el.is(':visible')) {
+                $('.project_actions').slideUp();
+            }
+            slide_el.slideToggle(); // only slide clicked element
+        });
+
+    });
+</script>
+
+
+{{!-- for select function inside material report form tab --}}
+<script>
+    $(document).ready(function () {
+        // Save all selects' id in an array 
+        // to determine which select's option and value would be changed
+        // after you select an option in another select.
+        var selectors = ['selectLevel', 'selectSubject', 'selectTopic',]
+
+        $('select').on('change', function () {
+            var index = selectors.indexOf(this.id)
+            var value = this.value
+
+            // check if is the last one or not
+            if (index < selectors.length - 1) {
+                var next = $('#' + selectors[index + 1])
+
+                // Show all the options in next select
+                $(next).find('option').show()
+                if (value != "") {
+                    // if this select's value is not empty, hide some other options
+                    $(next).find('option[data-value!=' + value + ']').hide()
+                }
+                // set next select's value to be the first option's value 
+                // and trigger change()
+                $(next).val($(next).find("option:first").val()).change()
+            }
+        })
+    });
+
+</script>
+
+{{!-- for navigation items --}}
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.nav_btn').click(function () {
+            $('.mobile_nav_items').toggleClass('active');
+        });
+    });
+</script>
+
+</html>

@@ -1,0 +1,103 @@
+<head>
+    <link rel="stylesheet" href="/css/login-design.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <script src="../js/validate1.js"></script>
+    <style>
+        /* The alert message box */
+        #errorDisplay {
+            color: red;
+            display: none;
+        }
+
+        .closebtn {
+            margin-left: 15px;
+            color: white;
+            font-weight: bold;
+            float: right;
+            font-size: 22px;
+            line-height: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .closebtn:hover {
+            color: black;
+        }
+    </style>
+</head>
+<div class="main">
+    <div class="container">
+        <div class="img-container">
+            <a href="/">
+                <img src="/img/inv.png" alt="Inventory Logo" />
+            </a>
+            <div class="img">
+                <img src="/img/login.svg" />
+
+            </div>
+        </div>
+
+        <div class="content-container">
+            <h3>Sign Up</h3>
+            <div id="errorDisplay"></div>
+            {{>messages}}
+            {{!-- <div id="display"></div> --}}
+
+            <form action="register" method="POST" onsubmit="return validateReg(this);">
+
+                <div class="form-group custom">
+                    <label for="name">Name:</label>
+                    <input type="text" name="username" class="form-control mine" id="" aria-describedby="nameHelp"
+                        placeholder="Enter Your Full Name">
+                </div>
+                <p id="nameError"></p>
+
+                <div class="form-group custom">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" name="email" class="form-control mine" id="exampleInputEmail1"
+                        aria-describedby="emailHelp" placeholder="Enter Your E-mail Address">
+                </div>
+                <p id="emailError"></p>
+
+
+                <div class="form-group custom">
+                    <article id="introText">
+                        {{!-- s --}}
+                        <i class="date">
+                            <label for="idCode">Company Pass Code</label>
+                            <a href="#event1" class="code-desc">?</a>
+                            <div>
+                                <p>
+                                    This is an in-house app, therefore, you need to optain this passcode from
+                                    CobuildIT
+                                    Admin for you to use this platform.
+                                </p>
+                            </div>
+                        </i>
+                        </ul>
+                    </article>
+
+                    <input type="text" class="form-control" name="uid" class="mine" id="inputId"
+                        placeholder="Enter Company Pass Code" />
+                </div>
+                <p id="idError"></p>
+
+                <div class="form-group custom">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" name="password" class="form-control mine" id="exampleInputPassword1"
+                        placeholder="Enter Your Password">
+                </div>
+                <p id="passError"></p>
+
+                <div class="submit-button">
+                    <input type="submit" value="Sign Up" class="btn btn-primary" />
+                </div>
+
+                <div style="text-align: left;">
+                    <p><a href="/Authentication/login" class="blue-text">Login</a> Instead!</p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>

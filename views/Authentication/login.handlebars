@@ -1,0 +1,54 @@
+<head>
+    <link rel="stylesheet" href="/css/login-design.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
+
+
+    <script src="../js/loginValidate.js"></script>
+</head>
+<div class="main">
+    <div class="container">
+        <div class="img-container">
+            <a href="/">
+                <img src="/img/inv.png" alt="Inventory Logo" />
+            </a>
+            <div class="img">
+                <img src="/img/login.svg" />
+            </div>
+        </div>
+
+
+        <div class="content-container">
+            <h3>Login</h3>
+            {{!-- front end info display --}}
+            <div id="displayEmptyField" style="color: red"></div>
+            {{!-- backend info display --}}
+            {{>messages}}
+            <!--Form Body-->
+
+            <form action="login" method="POST" onsubmit="return LoginValidate(this)">
+                <div class="form-group custom">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control mine" id="exampleInputEmail1" name="email"
+                        aria-describedby="emailHelp" placeholder="Enter Your E-mail Address">
+                </div>
+
+                <div class="form-group custom">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" name="password" class="form-control mine" id="exampleInputPassword1"
+                        placeholder="Enter Your Password">
+                </div>
+
+                <div class="submit-button">
+                    <button class="btn btn-primary" type="submit">Log in </button>
+                    {{!-- <a href="../profile/userProfile" class="btn btn-primary">Login</a> --}}
+                    <p class="reset-pass"><a href="../Authentication/reset"> Forgot Password?</a></p>
+                </div>
+                <div style="text-align: left;">
+                    <p>Not a member? <a href="../Authentication/register" class="blue-text">Sign Up</a></p>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+</div>

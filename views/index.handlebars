@@ -1,0 +1,112 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
+    <style>
+        .main {
+            /*background-color: rgb(189, 209, 226);*/
+            background-color: rgb(184, 209, 264);
+            overflow: hidden;
+            margin-bottom: 7rem;
+            padding-bottom: 1.5rem;
+            text-align: center;
+            height: 100%;
+        }
+
+        .content {
+            padding: 0;
+            margin: 5rem;
+            padding-bottom: 11rem;
+        }
+
+        .content p {
+            text-transform: capitalize;
+            font-size: 16px;
+            font-family: New Times serif;
+        }
+
+        .links {
+            margin: 15px 34rem;
+        }
+
+        @media only screen and (max-width: 868px) {
+            .main {
+                width: 100%;
+            }
+
+            .sub-main {
+                padding: 0 3rem 1rem 3rem;
+            }
+
+            .content {
+                padding: 0;
+                margin: 0;
+                padding-bottom: 11.5rem;
+            }
+
+            .content img {
+                width: auto
+            }
+
+            .content p {
+                margin: 0;
+                font-size: 14px;
+                margin-bottom: 1rem;
+            }
+
+            .links {
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+
+<div class="main">
+    <div class="sub-main">
+        <div class="content">
+            <img src="/img/inv.png" alt="icon" />
+            <p>Login to an existing account or register to continue</p>
+            <div class="links">
+                <a href="/Authentication/login" class="btn btn-primary btn-block">Login</a><br>
+                <a href="/Authentication/register" class="btn btn-danger btn-block">Register</a>
+            </div>
+        </div>
+
+
+        {{!-- footer --}}
+        <footer style="border-top: solid 1px #eee; padding-top: 1em;">
+            <style>
+                .footer-container {
+                    overflow-y: hidden;
+                    overflow-x: hidden;
+                }
+            </style>
+            <div class="footer-container">
+                <div class="row">
+                    <div class="col-sm-12 text-center">
+                        <p class="text-muted" style="font-size: 16px; font-family: New Times serif;">Web Inventory
+                            System<br> &copy; <b id="date"></b></br>
+                        </p>
+                        {{!-- getting the current year --}}
+                        <script>
+                            var date = document.getElementById('date');
+                            var currentDate = new Date().getFullYear();
+                            date.innerHTML = currentDate;
+                        </script>
+                        <p class="text-muted">
+                            Powered by
+                            <a href="https://www.cobuildit.com" target="blank">
+                                CobuildIT.com</a>
+
+                        </p>
+                        <p class="text-center">
+                            <a href="#"><i class="fa fa-twitter-square fa-2x text-primary"></i></a>
+                            <a href="#"><i class="fa fa-facebook-square fa-2x text-primary"></i></a>
+                            <a href="#"><i class="fa fa-linkedin-square fa-2x text-primary"></i></a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        {{!-- end of footer --}}
+    </div>
+
+</div>

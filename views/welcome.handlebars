@@ -1,0 +1,301 @@
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Cobuildit Inventory System</title>
+	<link rel="stylesheet" href="/css/dashboard_style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+	<script src="/js/inventoryJs.js"></script>
+</head>
+
+<body>
+	<input type="checkbox" id="check">
+	<!--header area start-->
+	<div class="top">...</div>
+	<header>
+		<label for="check">
+			<i class="fas fa-bars" id="sidebar_btn"></i>
+		</label>
+
+		<div class="right_area">
+			<a href="/notification" class="logout_btn"><i class="far fa-bell color"></i></a>
+			<a href="#" class="logout_btn">
+				<i class="far fa-comment-dots color"></i>
+			</a>
+		</div>
+	</header>
+	<!--header area end-->
+
+	<!--mobile navigation bar start-->
+	<div class="mobile_nav">
+		<div class="nav_bar">
+			<img src="/img/download.png" class="mobile_profile_image" alt="">
+			<i class="fa fa-bars nav_btn" id="getMenu" onclick="openMenu(getMenu, dropMenu);"></i>
+		</div>
+
+		<div class="mobile_nav_items" id="dropMenu">
+			<div class="items">
+				<span class="project_dropdown">
+					<i class="fas fa-city"></i>
+					<a href="#">Dashboard</a>
+				</span>
+			</div>
+
+			{{!-- MOBILE PROJECT LISTING --}}
+			{{!-- Essentia Project --}}
+			<div class="items">
+				<span class="project_dropdown">
+					<i class="fas fa-city"></i>
+					Essentia &#8594
+				</span>
+				<li>
+					<ul class="project_actions">
+						<p><a href="/projects/essentia/essentia-forms">Create new report</a></p>
+						<p><a href="/projects/essentia/list">View all reports</a></p>
+					</ul>
+				</li>
+			</div>
+
+			{{!-- Regency Project --}}
+			<div class="items">
+				<span class="project_dropdown">
+					<i class="fas fa-warehouse"></i>
+					Regency &#8594
+				</span>
+				<li>
+					<ul class="project_actions">
+						<p><a href="/projects/regency/regency-forms">Create new report</a></p>
+						<p><a href="/projects/regency/regency-list">View all reports</a></p>
+					</ul>
+				</li>
+			</div>
+
+			{{!-- Lifestyle Project --}}
+			<div class="items">
+				<span class="project_dropdown">
+					<i class="fas fa-hotel"></i>
+					Lifestyle &#8594
+					{{!-- < b class="caret" id="caret"></b> --}}
+				</span>
+				<li>
+					<ul class="project_actions">
+						<p><a href="/projects/lifestyle/lifestyle-forms">Create new report</a></p>
+						<p><a href="/projects/lifestyle/lifestyle-list">View all reports</a></p>
+					</ul>
+				</li>
+			</div>
+
+			{{!-- Zephyr Project --}}
+			<div class="items">
+				<span class="project_dropdown">
+					<i class="fas fa-hospital"></i>
+					Zephyr &#8594
+					{{!-- < b class="caret" id="caret"></b> --}}
+				</span>
+				<li>
+					<ul class="project_actions">
+						<p><a href="/projects/zephyr/zephyr-forms">Create new report</a></p>
+						<p><a href="/projects/zephyr/zephyr-list">View all reports</a></p>
+					</ul>
+				</li>
+			</div>
+
+			{{!-- Logout --}}
+			<div class="items">
+				<span class="project_dropdown">
+					<i class="fas fa-hospital"></i>
+					<a href="/logout">Logout</a>
+				</span>
+			</div>
+
+		</div>
+	</div>
+	<!--mobile navigation bar end-->
+
+	<!--sidebar start-->
+	<div class="sidebar">
+		<div class="logo">
+			<img src="/img/inv-white.png" />
+		</div>
+		<div class="profile_info">
+			<img src="/img/download.png" class="profile_image" alt="">
+			<h4>{{ username }}</h4>{{!-- name should be updated from the db here--}}
+		</div>
+
+		<div class="sidebar-items">
+			<div class="items">
+				<span class="project_dropdown">
+					<i class="fas fa-desktop"></i>
+					<a href="#">Dashboard</a>
+				</span>
+			</div>
+
+			{{!-- PROJECTS LISTING --}}
+			{{!-- Essentia Project --}}
+			<div class="items">
+				<span class="project_dropdown">
+					<i class="fas fa-city"></i>
+					Essentia &#8594
+					{{!-- < b class="caret" id="caret"></b> --}}
+				</span>
+				<li>
+					<ul class="project_actions">
+						<p>
+							<a href="/projects/essentia/essentia-forms">Create new report</a>
+						</p>
+						<p><a href="/projects/essentia/list">View all reports</a></p>
+					</ul>
+				</li>
+			</div>
+
+			{{!-- Regency Project --}}
+			<div class="items">
+				<span class="project_dropdown">
+					<i class="fas fa-warehouse"></i>
+					Regency &#8594
+				</span>
+				<li>
+					<ul class="project_actions">
+						<p><a href="/projects/regency/regency-forms">Create new report</a></p>
+						<p><a href="/projects/regency/regency-list">View all reports</a></p>
+					</ul>
+				</li>
+			</div>
+
+			{{!-- LifeStyle --}}
+			<div class="items">
+				<span class="project_dropdown">
+					<i class="fas fa-hotel"></i>
+					Lifestyle &#8594
+				</span>
+				<li>
+					<ul class="project_actions">
+						<p><a href="/projects/lifestyle/lifestyle-forms">Create new report</a></p>
+						<p><a href="/projects/lifestyle/lifestyle-list">View all reports</a></p>
+					</ul>
+				</li>
+			</div>
+
+			{{!-- Zephyr Project --}}
+			<div class="items">
+				<span class="project_dropdown">
+					<i class="fas fa-hospital"></i>
+					Zephyr &#8594
+				</span>
+				<li>
+					<ul class="project_actions">
+						<p><a href="/projects/zephyr/zephyr-forms">Create new report</a></p>
+						<p><a href="/projects/zephyr/zephyr-list">View all reports</a></p>
+					</ul>
+				</li>
+			</div>
+
+			{{!-- Logout --}}
+			<div class="items">
+				<span class="project_dropdown">
+					<i class="fa fa-sign-out-alt"></i>
+					<a href="/logout">Logout</a>
+				</span>
+			</div>
+
+		</div>
+	</div>
+	<!--sidebar end-->
+
+	<div class="content" id="content">
+		<div class="welcome-user">
+			<p>Hi,
+				<label style="color: rgb(107, 101, 101)">
+					{{ username }}
+				</label>
+			</p>
+			<div class="message">
+				<p><b>Welcome to your Dashboard</b></p>
+			</div>
+		</div>
+
+		{{!-- breadcrumbs --}}
+		<ol class="breadcrumb mb-4">
+			<li class="breadcrumb-item active">Dashboard</li>
+		</ol>
+
+		<div class="content-holder">
+
+			<div class="card">
+				<div class="card-contents">
+					<div class="numbers">
+						<label>{{ totalEssentia }}</label>
+						<p>Reports created</p>
+						<div class="view-all">
+							<a href="/projects/essentia/list">View All</a>
+						</div>
+					</div>
+					<div class="add">
+						<div class="db">
+							<i class="fas fa-database"></i>
+						</div>
+						<p><b>Essentia</b></p>
+					</div>
+				</div>
+			</div>
+
+			<div class="card">
+				<div class="card-contents">
+					<div class="numbers">
+						<label>0</label>
+						<p>Reports created</p>
+						<div class="view-all">
+							<a href="/projects/regency/regency-list">View All</a>
+						</div>
+					</div>
+					<div class="add">
+						<div class="db">
+							<i class="fas fa-database"></i>
+						</div>
+						<p><b>Regency</b></p>
+					</div>
+				</div>
+			</div>
+
+			<div class="card">
+				<div class="card-contents">
+					<div class="numbers">
+						<label>0</label>
+						<p>Reports created</p>
+						<div class="view-all">
+							<a href="/projects/lifestyle/lifestyle-list">View All</a>
+						</div>
+					</div>
+					<div class="add">
+						<div class="db">
+							<i class="fas fa-database"></i>
+						</div>
+						<p><b>Lifestyle</b></p>
+					</div>
+				</div>
+			</div>
+
+			<div class="card">
+				<div class="card-contents">
+					<div class="numbers">
+						<label>0</label>
+						<p>Reports created</p>
+						<div class="view-all">
+							<a href="/projects/zephyr/zephyr-list">View All</a>
+						</div>
+					</div>
+					<div class="add">
+						<div class="db">
+							<i class="fas fa-database"></i>
+						</div>
+						<p><b>Zephyr</b></p>
+					</div>
+				</div>
+			</div>
+			{{!-- other sample items --}}
+		</div>
+
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,190 @@
+/* This css is for login, registration, & pass-reset */
+
+.main {
+  margin-bottom: 3rem;
+  /* padding-bottom: 0.1rem; */
+}
+
+.container {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.img-container {
+  /* background-color: rgb(189, 209, 226); */
+  background-color: rgb(184, 209, 264);
+  padding: 2rem;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+}
+
+.img {
+  padding-bottom: 10rem;
+}
+.img img {
+  height: 400px;
+  width: 100%;
+}
+
+.content-container {
+  top: 0;
+  right: 0;
+  width: 100%;
+  margin: 4rem 0 0 4rem;
+  padding: 4rem 0 0 6rem;
+}
+.content-container h3 {
+  font-size: 3rem;
+  margin-bottom: 4rem;
+}
+
+label {
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 17px;
+  line-height: 20px;
+  color: #a09292;
+}
+.mine {
+  border: none;
+  text-decoration: none;
+  border-bottom: 2px solid #bebec0;
+}
+.code-desc {
+  margin: 1rem;
+  border: 1px solid lightblue;
+  font-size: 14px;
+  color: #a09292;
+}
+.code-desc:hover {
+  cursor: pointer;
+}
+.custom {
+  margin-top: 3rem;
+}
+.submit-button {
+  display: flex;
+  justify-content: space-between;
+}
+.reset-pass a {
+  text-decoration: none;
+}
+
+.social-signup {
+  text-align: center;
+}
+.social-signup a {
+  font-size: 3rem;
+  margin-right: 1rem;
+}
+
+/* for the question mark description display*/
+#introText a {
+  color: grey;
+  text-decoration: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+#introText a:hover {
+  color: #ffb280;
+}
+
+#introText ul {
+  display: inline-block;
+}
+
+.date {
+  position: relative;
+}
+
+.date div {
+  /*visiblity: hidden; */
+
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  margin-top: -30px;
+  /* approx adjustment for arrow */
+  margin-left: 20px;
+  /* approx adjustment for arrow */
+}
+
+.date a:hover + div {
+  cursor: pointer;
+  display: block;
+  /*visibility: visible; */
+  width: 180px;
+  line-height: 20px;
+  padding: 8px;
+  font-size: 14px;
+  text-align: center;
+  z-index: 999;
+  color: rgb(113, 157, 171);
+  background: rgb(255, 255, 255);
+  border: 4px solid rgb(255, 255, 255);
+  border-radius: 5px;
+  text-shadow: rgba(0, 0, 0, 0.0980392) 1px 1px 1px;
+  box-shadow: #333 -4px 4px 16px 2px;
+  -webkit-transition: opacity 100ms ease-in;
+  -o-transition: opacity 100ms ease-in;
+  -moz-transition: opacity 100ms ease-in;
+  transition: opacity 100ms ease-in;
+  pointer-events: none;
+}
+
+.date div:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent #ffffff transparent transparent;
+  top: 22px;
+  left: -23px;
+}
+
+/* for mobile */
+@media only screen and (max-width: 768px) {
+  .main {
+    width: 100%;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+  .img-container {
+    padding: 0 0 0 1rem;
+  }
+  .img-container img {
+    width: 100px;
+  }
+  .img {
+    display: none;
+  }
+
+  /* for question mark display*/
+  .date div {
+    /*visiblity: hidden; */
+    display: none;
+    position: absolute;
+    top: 0;
+    /* left: 100%; */
+    margin-top: 5px;
+    /* approx adjustment for arrow */
+    margin-left: -30px;
+    /* approx adjustment for arrow */
+  }
+
+  /* for content-container */
+  .content-container {
+    margin: 0.5rem;
+    padding: 1rem;
+    width: 95%;
+  }
+}

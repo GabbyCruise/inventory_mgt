@@ -1,0 +1,160 @@
+.main-container {
+  text-align: left;
+  margin-left: 1.5rem;
+  padding-bottom: 3rem;
+}
+.first-layer {
+  /*  */
+  margin-top: 1px;
+}
+
+.first-layer h2 {
+  text-align: left;
+  font-size: 20px;
+}
+
+/* breadcrumbs */
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  list-style: none;
+  background-color: #e9ecef;
+  border-radius: 0.25rem;
+}
+
+.breadcrumb-item {
+  display: flex;
+}
+.breadcrumb-item + .breadcrumb-item {
+  padding-left: 0.5rem;
+}
+.breadcrumb-item + .breadcrumb-item::before {
+  display: inline-block;
+  padding-right: 0.5rem;
+  color: #6c757d;
+  content: "/";
+}
+.breadcrumb-item + .breadcrumb-item:hover::before {
+  text-decoration: underline;
+}
+.breadcrumb-item + .breadcrumb-item:hover::before {
+  text-decoration: none;
+}
+.breadcrumb-item.active {
+  color: #6c757d;
+}
+.quick-nav {
+  color: darkgray;
+  margin-bottom: 3rem;
+}
+/* breadcrumbs*/
+
+/* tab container */
+.tabs {
+  margin-bottom: 3rem;
+}
+.menu-items {
+  display: flex;
+  justify-content: space-evenly;
+}
+.tablink {
+  text-align: center;
+}
+.tablink i {
+  font-size: x-large;
+}
+
+.tablink:hover {
+  cursor: pointer;
+}
+
+/* tab-display form fields */
+.tabcontent {
+  padding: 1rem;
+}
+
+/* input fields */
+.clonedInputFence {
+  margin-bottom: 2rem;
+}
+.w3-container {
+  background-color: white;
+  border-radius: 2rem;
+  padding: 5rem;
+}
+.w3-container h4 {
+  margin-bottom: 3rem;
+}
+.main-fields select {
+  background-color: rgba(237, 237, 241, 0.938);
+}
+.main-fields input {
+  background-color: rgba(237, 237, 241, 0.938);
+}
+.other-inputs {
+  margin: 0 1rem;
+}
+.other-inputs input {
+  background-color: rgba(237, 237, 241, 0.938);
+}
+.other-inputs textarea {
+  background-color: rgba(237, 237, 241, 0.938);
+}
+.control {
+  padding-right: 4rem;
+}
+.control i {
+  float: right;
+  font-size: medium;
+  color: gray;
+  cursor: pointer;
+  margin: 1rem;
+}
+.submit-button {
+  text-align: center;
+  margin-top: 2rem;
+}
+.mine-sub {
+  padding: 1rem 2rem;
+}
+
+@media screen and (max-width: 789px) {
+  .main-container {
+    /* text-align: left; */
+    margin: 0;
+    padding-bottom: 3rem;
+  }
+  .tab-display {
+    margin: 0;
+    padding: 0;
+  }
+  .tabcontent {
+    padding: 0;
+  }
+
+  .w3-container {
+    padding: 1rem;
+  }
+  .w3-container h4 {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  /* input fields */
+  .clonedInputFence {
+    margin-bottom: 2rem;
+  }
+  .control {
+    margin: 0;
+    padding: 0;
+  }
+  .submit-button {
+    text-align: center;
+    margin: 2rem 10rem;
+  }
+  .min-sub {
+    margin-top: 2rem;
+  }
+}
