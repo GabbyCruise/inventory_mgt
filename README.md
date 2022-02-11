@@ -15,7 +15,7 @@ An inventory management system for real estate. Here, you can track materials, a
   <h5>Project Record Forms</h5>
   <img src="/demo/inv_mat_form.jpg" width="700" title="Login page">
   <h5>Material Stock Page</h5>
-  <img src="/demo/inv_result.jpg" width="700" title="Login page">
+  <img src="/demo/inv_view.jpg" width="700" title="Login page">
 </p>
 
 
