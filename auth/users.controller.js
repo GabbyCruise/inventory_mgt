@@ -61,18 +61,13 @@ exports.register = async (req, res) => {
                 bcrypt.hash(password, 10, function(err, hash) {
                     if(err) return res.status(500).json({hashFailed: 'There was an error hashing password', err});
                     
-                    //generate a  verification token for this user
                     var chars = 'abcd1234efghi56IJKLMN7890vneiokfkjiuWIUOIE48mnopqrstUVWZXY01';
                     var token = '';
                     for(var i = 64; i > 0; --i){
                         token += chars[Math.round(Math.random() * (chars.length - 1))];
                     }
 
-                    // creating expiry date
-                    // var expires = new Date();
-                    // expires.setHours(expires.getHours + 24);
-
-                    //bundling the new user information
+                    
                     users = new Users({
                         username: req.body.username,
                         email: req.body.email,
@@ -82,7 +77,6 @@ exports.register = async (req, res) => {
                     });
 
                     /** ****** SENDING A VERIFICATION EMAIL */
-                    //configure email properties
                     const client_url = 'http://' + req.headers.host;
                     const output = `
                         <h2>Please click on the below link to activate your account</h2>
@@ -109,8 +103,6 @@ exports.register = async (req, res) => {
                         html: output,
                     };
                     
-                    //sending email before saving user's data to db
-                    //{come back and send a mail with user details to gjonah18@gmail.com each time a new user registers}
                     sendMail.send(mailOptions, (err) => {
                         req.flash('failed', 'Sorry, Registration failed, Mail Not sent! Try again later');
                         if(err) {
@@ -118,11 +110,9 @@ exports.register = async (req, res) => {
                                 userFail: req.flash('failed')
                             });
                         }else{
-                            //register user to the db
                             users.save((err, done) => {
                                 if(err) return res.status(500).json({savingError: 'Unable to register this user! please try again', err});
                                 if(done){
-                                    //if its successful, tell it to the user
                                     req.flash('success_msg', "Registration Successful!, Please check your mail for a confirmation message!");
                                     return res.redirect('/Authentication/register');
                                 }
@@ -247,6 +237,3 @@ exports.Logout = async(req, res, next) =>{
     req.session.user = null;
     res.redirect("/Authentication/login");
 }
-//kindom2021
-//new password: JoY1122!?
-//janechioma951@gmail.com

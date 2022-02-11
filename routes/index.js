@@ -16,20 +16,9 @@ router.get("/", (req, res) => {
 //------------ Dashboard Route ------------//
 router.get("/welcome", /*authenticateUser.ensureAuthenticated, */(req, res) => {
     var count = 0; temp = 0;
-    // Materials.find((err, total) => {
-    //   if(!err){
-    //     if(total){
-    //       //display total created report
-    //       for(i = 1; i <= total.length; i++){
-    //         count = temp + i;
-    //       }
-          res.render("welcome", {
-            //username: req.user.username,
-            totalEssentia: count
-          });
-    //     }
-    //   }
-    // })
+      res.render("welcome", {
+        totalEssentia: count
+      });
     
     }
 );
@@ -68,16 +57,6 @@ router.route('/projects/zephyr/zephyr-forms')
     });
   });
 
-//---------- essentia project material list ------//
-// router.get(
-//   "/projects/essentia/list",
-//   /*authenticateUser.ensureAuthenticated,*/ (req, res) => {
-//     res.render("/projects/essentia/list", {
-//       //username: req.user.username
-//     });
-//   }
-// );
-
 router.get("/projects/essentia/list", essentia.MaterialList);
 
 //-------- report item veiw -----------//
@@ -96,9 +75,4 @@ router.get("/notification", /*authenticateUser.ensureAuthenticated,*/ (req, res)
     });
   }
 );
-
-// router.get('/Authentication/new-pass', (req, res) => {
-//     res.render('Authentication/new-pass');
-// })
-
 module.exports = router;

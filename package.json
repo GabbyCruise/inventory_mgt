@@ -1,23 +1,23 @@
 {
   "name": "inventory",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "Gabriel Jonah",
   "license": "ISC",
   "dependencies": {
-    "@sendgrid/mail": "^7.4.2",
-    "bcrypt": "^5.0.0",
+    "@sendgrid/mail": "^7.6.1",
+    "bcrypt": "^5.0.1",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.5",
     "crypto": "^1.0.1",
-    "express": "^4.17.1",
-    "express-handlebars": "^5.2.0",
+    "express": "^4.17.2",
+    "express-handlebars": "^5.3.5",
     "express-session": "^1.17.1",
     "googleapis": "^67.0.0",
     "joi": "^17.3.0",
@@ -25,12 +25,21 @@
     "livereload": "^0.9.3",
     "mongoose": "^5.11.12",
     "morgan": "^1.10.0",
-    "nodemailer": "^6.4.17",
+    "nodemailer": "^6.7.2",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "randomstring": "^1.1.5",
     "sendgrid": "^5.2.3",
     "session": "^0.1.0",
-    "validator": "^13.5.2"
-  }
+    "validator": "^13.7.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GabbyCruise/inventory.git"
+  },
+  "bugs": {
+    "url": "https://github.com/GabbyCruise/inventory/issues"
+  },
+  "homepage": "https://github.com/GabbyCruise/inventory#readme",
+  "description": ""
 }

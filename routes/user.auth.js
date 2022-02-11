@@ -12,9 +12,6 @@ route.route('/Authentication/register')
 
 
     /** ****** VERIFY USERS ********* */
-// route.route("/Authentication/login")
-//     .get(user_auth.verifyUser);
-
 route.get('/activate/:token',user_auth.verifyUser);
 
 /** ******** USER LOGIN************ */

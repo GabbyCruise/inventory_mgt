@@ -28,9 +28,6 @@ function createRecords(req, res) {
     materials.save((err) => {
         //keep an eye here
        if(!err){
-        //grab the homepage card and update number here
-        //include the popup notification success here
-        console.log('Records saved to Essentia Materials')
         res.redirect('/projects/essentia/list');
         return;
        }
@@ -39,7 +36,6 @@ function createRecords(req, res) {
         if(err.name == 'ValidationError'){
             handleValidationError(err, req.body);
             res.status(400).render('projects/essentia/essentia-forms',{
-                // warningError: 'Sorry, you have to fill in the required fields to continue',
                 username: req.user.username,
                 materials:req.body
             });

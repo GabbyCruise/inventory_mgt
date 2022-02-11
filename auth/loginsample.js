@@ -29,12 +29,6 @@
                     return;
                 }
                 else{
-                    // You can try to create a token to track how long the user is logged into the dashboard and set it to expire in 24hrs before redirecting the user dashboard
-                    //User is logged in
-                    // req.session.user = {
-                    //     username,
-                    // };
-                
                     res.redirect("/welcome");
                 }
                 return;

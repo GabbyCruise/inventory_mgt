@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const Materials = mongoose.model('Newmaterials');//old
-// const newMaterials = require('../model/essentia/newMaterial');
 mongoose.set('useFindAndModify', true);
 
 exports.populate1 = (req, res) => {
@@ -35,7 +34,6 @@ async function createRecords(req, res){
 
     //if material category is found, print it out for now
     if(found){
-      console.log("Found materia category: " + found.category)//remove 
 
       //searching for sub category attached to the above category
       Materials.findOne({subCategory: materialItems.subCategory}, (err, subCatFound) => {
