@@ -1,6 +1,7 @@
 # inventory_mgt
 An inventory management system for real estate. Here, you can track materials, assign materials, records supply and lots more. Development reviewed to be resumed.
 
+### UI PAGES
 
 <p align="left">
   <h5>Login Page</h5>
@@ -11,7 +12,7 @@ An inventory management system for real estate. Here, you can track materials, a
   <img src="/demo/auth_reset.jpg" width="700" title="Login page">
   <h5>User Dashboard</h5>
   <img src="/demo/inv_dash2.jpg" width="700" title="Login page">
-  <h5>Project Material Form</h5>
+  <h5>Project Record Forms</h5>
   <img src="/demo/inv_mat_form.jpg" width="700" title="Login page">
   <h5>Material Stock Page</h5>
   <img src="/demo/inv_result.jpg" width="700" title="Login page">
