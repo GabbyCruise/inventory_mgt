@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
-const url = 'mongodb+srv://gabrieljonah:P@$$word124@gabrielcluster0.zxl4r.mongodb.net/I_nventoryDB';
+const url = 'your-mongodb-url';
 
-mongoose.connect(/*process.env.DB_URL*/ url, {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true}, (err, done) => {
+mongoose.connect( url, {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true}, (err, done) => {
     try{
         if(!err) return console.log('Connected to InventoryDB');
     else{

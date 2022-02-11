@@ -81,7 +81,7 @@ exports.register = async (req, res) => {
                     const output = `
                         <h2>Please click on the below link to activate your account</h2>
                         <p> 
-                        Hello <b> ${users.username}</b>, Welcome to CobuildiT Inventory System.
+                        Hello <b> ${users.username}</b>, Welcome to Real Estate Inventory System.
                         </p>
 
                         <p> Please use the below link to activate your account. After then will you be able to log into your account</p>
@@ -165,11 +165,11 @@ exports.verifyUser = (req, res, next) => {
              //configure email properties
              const client_url = 'http://' + req.headers.host;
              const output = `
-                 <h2>Welcome to CobuildIT Project Inventory Management System </h2>
+                 <h2>Welcome to Real Estate Inventory Management System </h2>
                  <p> Hello <b>${user.username}</b>, 
-                 <br/>This is Gabriel, the inventory admin. Thanks for signing up on the online Inventory management system.</p>
+                 <br/>This is Gabby, the inventory admin. Thanks for signing up on the online Inventory management system.</p>
                  <p> 
-                 This platform was created to help manage all CobuildiT project's inventory materials, material usage equipments etc. <br/>
+                 This platform was created to help manage your Real estate project's inventory materials, material usage equipments etc. <br/>
                  Please be mindful of the transations you make on this platform as any mistake may jeopardize the integrity of the data contained thus leading to misinformation.
                  </p>
  
@@ -185,7 +185,7 @@ exports.verifyUser = (req, res, next) => {
                  </P>
                  <p>
                  <b>Email:</b> gjonah18@gmail.com<br/>
-                 <b>Phone:</b> +234 706 345 4620<br/><br/>
+                 <b>Phone:</b> <br/><br/>
                  Warm Regards -:)
                  
                  </p>
@@ -194,16 +194,15 @@ exports.verifyUser = (req, res, next) => {
              var mailOptions = {
                  from: 'Welcome to Inventory <gabriel@6thgenerations.net>',
                  to: user.email,
-                 subject: 'Welcome to CobuildIT Inventory App',
+                 subject: 'Welcome to Real Estate Inventory App',
                  html: output,
              };
              
              //sending email after confirmation
              sendMail.send(mailOptions, (err) => {
-                 if(err) return res.json({mailError: 'System malfunctioned, you could not get the welcome email. but you can login because you have been verified ' + err});
+                if(err) return res.json({mailError: 'System malfunctioned, you could not get the welcome email. but you can login because you have been verified ' + err});
 
-                 req.flash('verified', 'Thank you, verification successful! You may now login');
-                console.log('user verified and updated')
+                req.flash('verified', 'Thank you, verification successful! You may now login');
                 res.redirect('/Authentication/login')
                 return;
             });          

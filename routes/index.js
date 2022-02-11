@@ -26,52 +26,52 @@ router.get("/welcome", /*authenticateUser.ensureAuthenticated, */(req, res) => {
 /* ********** accessing other resources while logged in ******* */
 //---------- essentia projects page ------//
 router.route("/projects/essentia/essentia-forms")
-  .get(/*authenticateUser.ensureAuthenticated,*/(req, res) => {
+  .get(authenticateUser.ensureAuthenticated, (req, res) => {
       res.render("projects/essentia/essentia-forms", {
-        //username: req.user.username
+        username: req.user.username
       });
     }
   )
-  .post(/*authenticateUser.ensureAuthenticated, */newEssentia.populate1);
+  .post(authenticateUser.ensureAuthenticated, newEssentia.populate1);
 
 
 router.route('/projects/lifestyle/lifestyle-forms')
-  .get(/*authenticateUser.ensureAuthenticated,*/ (req, res) => {
+  .get(authenticateUser.ensureAuthenticated, (req, res) => {
     res.render('projects/lifestyle/lifestyle-forms', {
-      //username: req.user.username
+      username: req.user.username
     });
   });
 
 
 router.route('/projects/regency/regency-forms')
-  .get(/*authenticateUser.ensureAuthenticated,*/ (req, res) => {
+  .get(authenticateUser.ensureAuthenticated, (req, res) => {
     res.render('projects/regency/regency-forms', {
-      //username: req.user.username
+      username: req.user.username
     });
   });
 
 router.route('/projects/zephyr/zephyr-forms')
-  .get(/* authenticateUser.ensureAuthenticated, */ (req, res) => {
+  .get(authenticateUser.ensureAuthenticated,  (req, res) => {
     res.render('projects/zephyr/zephyr-forms', {
-      //username: req.username;
+      username: req.username
     });
   });
 
 router.get("/projects/essentia/list", essentia.MaterialList);
 
 //-------- report item veiw -----------//
-router.get("/projects/essentia/material-view", /*authenticateUser.ensureAuthenticated, */(req, res) => {
+router.get("/projects/essentia/material-view", authenticateUser.ensureAuthenticated, (req, res) => {
     // const materialDesc = "No material display for now";
     res.render("projects/essentia/material-view", {
-      //username: req.user.username
+      username: req.user.username
     });
   }
 );
 
 //---------- notification page -----------//
-router.get("/notification", /*authenticateUser.ensureAuthenticated,*/ (req, res) => {
+router.get("/notification", authenticateUser.ensureAuthenticated, (req, res) => {
     res.render("notification", {
-      //username: req.user.username
+      username: req.user.username
     });
   }
 );
