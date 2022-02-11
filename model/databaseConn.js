@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const url = 'mongodb+srv://yourDB';
+const url = 'mongodb+srv://gabrieljonah:P@$$word124@gabrielcluster0.zxl4r.mongodb.net/I_nventoryDB';
 
 mongoose.connect(/*process.env.DB_URL*/ url, {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true}, (err, done) => {
     try{
