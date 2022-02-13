@@ -1,5 +1,5 @@
 const express = require('express');
-const config = require('./headerFiles/config');
+const config = require('./headers/config');
 require('livereload');
 require('./auth/passport.auth');
 var app = express();

@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const url = 'your-mongodb-url';
+const url = 'YOUR-DB-URL-GOES-HERE';
 
 mongoose.connect( url, {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true}, (err, done) => {
     try{
