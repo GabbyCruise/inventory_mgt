@@ -1,5 +1,5 @@
 # inventory_mgt
-An inventory management system for real estate. Here, you can track materials, assign materials, records supply and lots more. Development reviewed to be resumed.
+An inventory management system. Here, you can track all records, assign materials, records supply and lots more. Development reviewed to be resumed.
 
 ### UI PAGES
 
